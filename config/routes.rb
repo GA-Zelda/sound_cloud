@@ -4,6 +4,13 @@ Rails.application.routes.draw do
 
   root 'application#index'
 
+  get '/tracks' => 'application#tracks'
+
+  resources :users do
+    resources :tracks
+  end    
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

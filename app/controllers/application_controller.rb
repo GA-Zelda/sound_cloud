@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def index
 
   end
+
+  def tracks
+  	render :tracks
+  end
 end

@@ -1,27 +1,39 @@
 class UsersController < ApplicationController
+  
+  # form to create a new user instance
+  # GET 'users/new'
   def new()
-    #user = User.new
+
   end
 
+  # create new user and save to database
+  # POST '/users'
   def create()
     user = User.create({name: params[:name], email: params[:email], password: params[:password], location: params[:location], favorite_artist: params[:favorite_artist]})
-    redirect_to '/'
+    redirect_to '/tracks'
   end
 
-  def show()
-    binding.pry
-  end
-
+  # render edit user profile form
+  # GET '/users/:id/edit'
   def edit()
-    binding.pry
+  
   end
 
+  # update user information in database
+  # PUT/PATCH '/users/:id'
   def update()
-    binding.pry
+    user = User.find(params[:id])
+    user.location = params[:location]
+    user.favorite_artist = params[:favorite_artist]
+    user.save
+
+    redirect_to "/tracks"
   end
 
 
   private
+
+  # authorize user to CRUD app pages
   def authorize_user!(user)
     unless user.id == session[:user_id]
       render(text: 'Unauthorized', status: 401) and return true

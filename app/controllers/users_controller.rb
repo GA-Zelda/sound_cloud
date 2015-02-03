@@ -4,13 +4,20 @@ class UsersController < ApplicationController
   end
 
   def create()
+    user = User.create({name: params[:name], email: params[:email], password: params[:password], location: params[:location], favorite_artist: params[:favorite_artist]})
+    redirect_to '/'
+  end
+
+  def show()
     binding.pry
   end
 
   def edit()
+    binding.pry
   end
 
   def update()
+    binding.pry
   end
 
 

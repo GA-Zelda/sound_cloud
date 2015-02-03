@@ -10,7 +10,8 @@
 
   <div>
     <h3>Title: <%= track.title %></h3>
-    <a href="/users/<%= @id %>/tracks/<%= track.id %>"><button>Make Trackz</button></a>
+    <form method="POST" action="/users/<%= @id %>/tracks/<%= track.id %>"><button type="submit">Make Trackz</button></a>
+    </form>
   </div>  
 
 <% end %>

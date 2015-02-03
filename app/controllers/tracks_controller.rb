@@ -3,6 +3,7 @@ class TracksController < ApplicationController
 	# create a new track
 	# POST "/users/:user_id/tracks/:id"
 	def add
+		binding.pry
 		user_id = params[:user_id]
 
 	end

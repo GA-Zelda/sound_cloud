@@ -4,7 +4,8 @@
 
 <h2>Edit Your Trackzfile</h2>
 
-<%= form_for :user do |f| %>
+<%= form_for @user, url: {action: "update"} do |f| %>
+
   <p>
     <%= f.label :favorite_artist %><br>
     <%= f.text_field :favorite_artist %>

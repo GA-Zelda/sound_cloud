@@ -17,24 +17,24 @@ class UsersController < ApplicationController
   # GET 'users/:id'
   def show
   	@user = User.find(params[:id])
-  	render(:show, { locals: { user: user } })
+  	render(:show, { locals: { user: @user } })
   end
 
   # render edit user profile form
   # GET '/users/:id/edit'
   def edit()
-  
+  	@user = User.find(params[:id])
   end
 
   # update user information in database
   # PUT/PATCH '/users/:id'
   def update()
     user = User.find(params[:id])
-    user.location = params[:location]
-    user.favorite_artist = params[:favorite_artist]
+    user.location = params["user"][:location]
+    user.favorite_artist = params["user"][:favorite_artist]
     user.save
 
-    redirect_to "/tracks"
+    redirect_to "/users/#{params[:id]}"
   end
 
 

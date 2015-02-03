@@ -1,0 +1,15 @@
+<%= form_for :user do |f| %>
+  <p>
+    <%= f.label :favorite_artist %><br>
+    <%= f.text_field :favorite_artist %>
+  </p>
+
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

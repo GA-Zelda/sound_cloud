@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get '/tracks' => 'application#tracks'
 
+  post '/session' => 'session#create'
+  delete '/session' => 'session#destroy'
+
   resources :users do
     resources :tracks
   end    

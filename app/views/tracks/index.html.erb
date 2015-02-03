@@ -1,0 +1,15 @@
+<h1>Welcome to Hot Trackz!</h1>
+
+<hr>
+
+<h2><%= @name %>'s Sweet Tracks</h2>
+
+<ul>
+	<% @tracks.each do |track| %>
+		<div>
+			<%= track.song_title %>
+			<a href="/users/<%= @user_id %>/tracks/<%= track.id %>"><button>Delete Track</button></a>
+		</div>
+	<% end %>
+</ul>
+

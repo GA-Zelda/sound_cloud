@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'application#index'
 
+  post '/users/:user_id/tracks/:id' => 'tracks#add'
   get '/tracks' => 'application#tracks'
 
   post '/session' => 'session#create'

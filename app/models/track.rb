@@ -1,2 +1,2 @@
-class User < ActiveRecord::Base
+class Track < ActiveRecord::Base
 end

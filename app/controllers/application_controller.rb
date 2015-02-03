@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def tracks
+  	client = SoundCloud.new(:client_id => "4bfb6af6b3fc1982ae613dbcb6f0d1d5")
+  	@tracks = client.get('/tracks', :limit => 20, :order => "hotness") 
   	render :tracks
   end
 end

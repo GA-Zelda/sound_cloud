@@ -13,6 +13,13 @@ class UsersController < ApplicationController
     redirect_to '/tracks'
   end
 
+  # show user profile page
+  # GET 'users/:id'
+  def show
+  	@user = User.find(params[:id])
+  	render(:show, { locals: { user: user } })
+  end
+
   # render edit user profile form
   # GET '/users/:id/edit'
   def edit()

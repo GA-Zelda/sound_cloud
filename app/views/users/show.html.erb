@@ -1,0 +1,15 @@
+<h1>Welcome to Hot Trackz!</h1>
+
+<hr>
+
+<h2><%= user.name %>'s Trackzfile</h2>
+
+<ul>
+	<li>Email Address: <%= user.email %></li>
+	<li>Location: <%= user.location %></li>
+	<li>Favorite Artist: <%= user.favorite_artist %></li>
+</ul>
+
+<a href="/users/<%= user.id %>/edit"><button>Edit Your Trackzfile</button></a>
+
+<a href="/tracks"><button>Get Sweet Trackz</button></a>
